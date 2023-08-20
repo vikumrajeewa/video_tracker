@@ -42,6 +42,21 @@ When the video is paused or ends, the final playtime is sent to the server.<br>
 The plugin updates the playtime and view count in the database.<br>
 Video statistics can be displayed using shortcodes or viewed in the admin dashboard.<br>
 
+<h2>Execution Flow</h2> <br>
+01.Video Embedding: To embed a video in your posts or pages, use the [video_embed] shortcode. This shortcode takes two attributes: src (the video URL) and id (a unique identifier for the video). <br>
+
+Example: [video_embed src="video_url.mp4" id="video1"] <br>
+
+02.Video Tracking: When a video starts playing, the plugin's JavaScript code initiates. It sets up an interval to send the current playtime to the server every 10 seconds. The playtime data is sent using AJAX to the update_video_playtime function on the server. <br>
+
+03.Updating Playtime and View Count: The server-side update_video_playtime function receives the playtime data and the video's unique identifier. It updates the playtime for the video in the database and also fetches the current view count. Then, it updates the view count in the database, increasing it by 1.  <br>
+
+04.Displaying Video Statistics: To display video statistics, use the [video_statistics] shortcode along with the video's id attribute. The plugin fetches the total playtime and view count for the specified video from the database and displays it. <br>
+
+05.Admin Dashboard: In the WordPress admin dashboard, you'll find a 'Video Tracker' menu item. Clicking on it takes you to a page that lists the video statistics for all videos. This gives you an overview of how each video is performing in terms of playtime and view count. <br>
+
+The entire process ensures that you can accurately track the playtime and view count of videos embedded on your website. <br>
+
 <h2>Known Issues</h2><br>
 
 Occasionally, view count may increase by 2 or more due to user interactions or browser behavior. This is being actively addressed.<br>
