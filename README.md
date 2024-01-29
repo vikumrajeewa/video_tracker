@@ -25,10 +25,10 @@ Activate the plugin.<br>
 <h2>Usage</H2><br>
 
 Use the [video_embed] shortcode to embed videos in your posts or pages.<br>
-Example: [video_embed src="video_url.mp4" id="video1"]<br>
+Example: [video_embed src="video_url.mp4" id="video1"].<br>
 
 Add the [video_statistics] shortcode to display video statistics.<br>
-Example: [video_statistics id="video1"]<br>
+Example: [video_statistics id="video1"].<br>
 
 Videos' view count and playtime will be automatically tracked as users watch the videos.<br>
 
